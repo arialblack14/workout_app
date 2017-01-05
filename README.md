@@ -1,24 +1,9 @@
-# README
+# Rails 5 Workout App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a workout app built with
+*  Ruby on Rails 5
 
-Things you may want to cover:
+that uses real time features as well as
+*  [d3.js](https://d3js.org/)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Just `cd` into the project and run the `rails server`
