@@ -1,5 +1,8 @@
 class ExercisesController < ApplicationController
   def index
+    # e.g with named scopes we would have something like this for
+    # displaying last weeks workouts in desc order
+    # @exercises = current_user.exercises.last_week.desc_date
     @exercises = current_user.exercises
   end
 
