@@ -1,4 +1,6 @@
 class ExercisesController < ApplicationController
+  before_action :set_exercise, only: [:edit, :show, :update, :destroy]
+
   def index
     # e.g with named scopes we would have something like this for
     # displaying last weeks workouts in desc order
@@ -43,7 +45,17 @@ class ExercisesController < ApplicationController
     end
   end
 
+  def destroy
+    @exercise.destroy
+    flash[:notice] = "Exercise has been deleted"
+    redirect_to user_exercises_path(current_user)
+  end
+
   private
+
+  def set_exercise
+    @exercise = current_user.exercises.find(params[:id])
+  end
 
   def exercise_params
     params.require(:exercise).permit(:duration_in_min, :workout, :workout_date, :user_id)
