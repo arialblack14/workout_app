@@ -6,6 +6,8 @@ class ExercisesController < ApplicationController
     # displaying last weeks workouts in desc order
     # @exercises = current_user.exercises.last_week.desc_date
     @exercises = current_user.exercises
+
+    @friends = current_user.friends
   end
 
   def show
