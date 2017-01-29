@@ -13,6 +13,11 @@ RSpec.feature "Users signup" do
 
     expect(page).to have_content("You have signed up successfully.")
 
+    user = User.last # We want the user just created in the bofore block
+    room = user.room
+    room_name = user.full_name.split.join('-') # i.e. John-Doe
+    expect(room.name).to eq(room_name)
+
     visit "/"
     expect(page).to have_content("John Doe")
   end
