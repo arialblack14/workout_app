@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
     @message.room = current_room
 
     @message.save
-    redirect_to user_exercises_path(current_user)
+    redirect_to user_exercises_path(current_user, roomId: current_room.id)
   end
 
   private
